@@ -1,0 +1,418 @@
+[
+  {
+    "id": "pm-kisan",
+    "name": {
+      "en": "PM Kisan Samman Nidhi",
+      "hi": "प्रधानमंत्री किसान सम्मान निधि"
+    },
+    "benefit": {
+      "en": "₹6,000 per year in three instalments",
+      "hi": "तीन किस्तों में ₹6,000 प्रति वर्ष"
+    },
+    "benefitValue": 6000,
+    "applyUrl": "https://pmkisan.gov.in/",
+    "documents": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Land ownership records", "hi": "भूमि स्वामित्व के अभिलेख" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" },
+      { "en": "Mobile number", "hi": "मोबाइल नंबर" }
+    ],
+    "rules": [
+      {
+        "field": "occupation",
+        "op": "in",
+        "value": ["farmer"],
+        "label_en": "Occupation is farmer",
+        "label_hi": "व्यवसाय किसान है"
+      },
+      {
+        "field": "ownsLand",
+        "op": "eq",
+        "value": true,
+        "label_en": "Owns agricultural land",
+        "label_hi": "कृषि भूमि का स्वामित्व है"
+      }
+    ]
+  },
+  {
+    "id": "pm-mudra",
+    "name": {
+      "en": "PM Mudra Yojana",
+      "hi": "प्रधानमंत्री मुद्रा योजना"
+    },
+    "benefit": {
+      "en": "Loan up to ₹10 lakh for non-farm micro enterprises",
+      "hi": "गैर-कृषि सूक्ष्म उद्यमों के लिए ₹10 लाख तक का ऋण"
+    },
+    "benefitValue": 0,
+    "applyUrl": "https://www.udyamimitra.in/",
+    "documents": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "PAN card", "hi": "पैन कार्ड" },
+      { "en": "Business proof", "hi": "व्यवसाय का प्रमाण" },
+      { "en": "Address proof", "hi": "पते का प्रमाण" },
+      { "en": "6-month bank statement", "hi": "6 महीने का बैंक स्टेटमेंट" }
+    ],
+    "rules": [
+      {
+        "field": "age",
+        "op": "min",
+        "value": 18,
+        "label_en": "Age is at least 18",
+        "label_hi": "आयु कम से कम 18 वर्ष है"
+      },
+      {
+        "anyOf": [
+          { "field": "hasBusiness", "op": "eq", "value": true },
+          { "field": "occupation", "op": "in", "value": ["selfemployed"] }
+        ],
+        "label_en": "Has a business or is self-employed",
+        "label_hi": "व्यवसाय है या स्व-रोज़गार है"
+      }
+    ]
+  },
+  {
+    "id": "stand-up-india",
+    "name": {
+      "en": "Stand-Up India",
+      "hi": "स्टैंड-अप इंडिया"
+    },
+    "benefit": {
+      "en": "Bank loan of ₹10 lakh to ₹1 crore for a greenfield enterprise",
+      "hi": "नई इकाई के लिए ₹10 लाख से ₹1 करोड़ तक का बैंक ऋण"
+    },
+    "benefitValue": 0,
+    "applyUrl": "https://www.standupmitra.in/",
+    "documents": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "PAN card", "hi": "पैन कार्ड" },
+      { "en": "Caste certificate (if SC/ST)", "hi": "जाति प्रमाण पत्र (यदि एससी/एसटी)" },
+      { "en": "Business plan", "hi": "व्यवसाय योजना" },
+      { "en": "Address proof", "hi": "पते का प्रमाण" }
+    ],
+    "rules": [
+      {
+        "field": "age",
+        "op": "min",
+        "value": 18,
+        "label_en": "Age is at least 18",
+        "label_hi": "आयु कम से कम 18 वर्ष है"
+      },
+      {
+        "anyOf": [
+          { "field": "gender", "op": "eq", "value": "female" },
+          { "field": "category", "op": "in", "value": ["SC", "ST"] }
+        ],
+        "label_en": "Applicant is a woman or belongs to SC/ST",
+        "label_hi": "आवेदक महिला है या एससी/एसटी श्रेणी से है"
+      },
+      {
+        "anyOf": [
+          { "field": "hasBusiness", "op": "eq", "value": true },
+          {
+            "field": "occupation",
+            "op": "in",
+            "value": ["selfemployed", "unemployed"]
+          }
+        ],
+        "label_en": "Has a business, is self-employed, or is unemployed",
+        "label_hi": "व्यवसाय है, स्व-रोज़गार है, या बेरोज़गार है"
+      }
+    ]
+  },
+  {
+    "id": "apy",
+    "name": {
+      "en": "Atal Pension Yojana",
+      "hi": "अटल पेंशन योजना"
+    },
+    "benefit": {
+      "en": "Pension of ₹1,000–5,000 per month after age 60",
+      "hi": "60 वर्ष की आयु के बाद ₹1,000–5,000 प्रति माह पेंशन"
+    },
+    "benefitValue": 0,
+    "applyUrl": "https://www.npscra.nsdl.co.in/",
+    "documents": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" },
+      { "en": "Mobile number", "hi": "मोबाइल नंबर" }
+    ],
+    "rules": [
+      {
+        "field": "age",
+        "op": "between",
+        "value": [18, 40],
+        "label_en": "Age is between 18 and 40",
+        "label_hi": "आयु 18 से 40 वर्ष के बीच है"
+      },
+      {
+        "field": "hasBankAccount",
+        "op": "eq",
+        "value": true,
+        "label_en": "Has a bank account",
+        "label_hi": "बैंक खाता है"
+      }
+    ]
+  },
+  {
+    "id": "pmjjby",
+    "name": {
+      "en": "PM Jeevan Jyoti Bima Yojana",
+      "hi": "प्रधानमंत्री जीवन ज्योति बीमा योजना"
+    },
+    "benefit": {
+      "en": "₹2 lakh life cover at ₹436 per year",
+      "hi": "₹436 प्रति वर्ष पर ₹2 लाख का जीवन बीमा कवर"
+    },
+    "benefitValue": 0,
+    "applyUrl": "https://www.jansuraksha.gov.in/",
+    "documents": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" }
+    ],
+    "rules": [
+      {
+        "field": "age",
+        "op": "between",
+        "value": [18, 50],
+        "label_en": "Age is between 18 and 50",
+        "label_hi": "आयु 18 से 50 वर्ष के बीच है"
+      },
+      {
+        "field": "hasBankAccount",
+        "op": "eq",
+        "value": true,
+        "label_en": "Has a bank account",
+        "label_hi": "बैंक खाता है"
+      }
+    ]
+  },
+  {
+    "id": "pmsby",
+    "name": {
+      "en": "PM Suraksha Bima Yojana",
+      "hi": "प्रधानमंत्री सुरक्षा बीमा योजना"
+    },
+    "benefit": {
+      "en": "₹2 lakh accident cover at ₹20 per year",
+      "hi": "₹20 प्रति वर्ष पर ₹2 लाख का दुर्घटना बीमा कवर"
+    },
+    "benefitValue": 0,
+    "applyUrl": "https://www.jansuraksha.gov.in/",
+    "documents": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" }
+    ],
+    "rules": [
+      {
+        "field": "age",
+        "op": "between",
+        "value": [18, 70],
+        "label_en": "Age is between 18 and 70",
+        "label_hi": "आयु 18 से 70 वर्ष के बीच है"
+      },
+      {
+        "field": "hasBankAccount",
+        "op": "eq",
+        "value": true,
+        "label_en": "Has a bank account",
+        "label_hi": "बैंक खाता है"
+      }
+    ]
+  },
+  {
+    "id": "ssy",
+    "name": {
+      "en": "Sukanya Samriddhi Yojana",
+      "hi": "सुकन्या समृद्धि योजना"
+    },
+    "benefit": {
+      "en": "High-interest savings account for a girl child",
+      "hi": "बालिका के लिए उच्च ब्याज बचत खाता"
+    },
+    "benefitValue": 0,
+    "applyUrl": "https://www.nsiindia.gov.in/",
+    "documents": [
+      { "en": "Girl's birth certificate", "hi": "बालिका का जन्म प्रमाण पत्र" },
+      { "en": "Parent Aadhaar", "hi": "अभिभावक का आधार" },
+      { "en": "Parent PAN", "hi": "अभिभावक का पैन" },
+      { "en": "Address proof", "hi": "पते का प्रमाण" }
+    ],
+    "rules": [
+      {
+        "field": "hasGirlChildUnder10",
+        "op": "eq",
+        "value": true,
+        "label_en": "Has a girl child under 10 years",
+        "label_hi": "10 वर्ष से कम आयु की बालिका है"
+      }
+    ]
+  },
+  {
+    "id": "pmjdy",
+    "name": {
+      "en": "PM Jan Dhan Yojana",
+      "hi": "प्रधानमंत्री जन धन योजना"
+    },
+    "benefit": {
+      "en": "Zero-balance account, RuPay card, and accident cover",
+      "hi": "शून्य-शेष खाता, रुपे कार्ड और दुर्घटना बीमा कवर"
+    },
+    "benefitValue": 0,
+    "applyUrl": "https://pmjdy.gov.in/",
+    "documents": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Passport photo", "hi": "पासपोर्ट फोटो" },
+      { "en": "Address proof", "hi": "पते का प्रमाण" }
+    ],
+    "rules": [
+      {
+        "field": "hasBankAccount",
+        "op": "eq",
+        "value": false,
+        "label_en": "Does not already have a bank account",
+        "label_hi": "पहले से बैंक खाता नहीं है"
+      }
+    ]
+  },
+  {
+    "id": "nsp",
+    "name": {
+      "en": "National Scholarship Portal",
+      "hi": "राष्ट्रीय छात्रवृत्ति पोर्टल"
+    },
+    "benefit": {
+      "en": "Scholarship up to ₹20,000 per year",
+      "hi": "प्रति वर्ष ₹20,000 तक की छात्रवृत्ति"
+    },
+    "benefitValue": 20000,
+    "applyUrl": "https://scholarships.gov.in/",
+    "documents": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Income certificate", "hi": "आय प्रमाण पत्र" },
+      { "en": "Marksheet", "hi": "अंकतालिका" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" },
+      {
+        "en": "Caste certificate (if applicable)",
+        "hi": "जाति प्रमाण पत्र (यदि लागू हो)"
+      },
+      { "en": "Institution ID", "hi": "संस्थान पहचान पत्र" }
+    ],
+    "rules": [
+      {
+        "field": "occupation",
+        "op": "in",
+        "value": ["student"],
+        "label_en": "Occupation is student",
+        "label_hi": "व्यवसाय छात्र है"
+      },
+      {
+        "field": "income",
+        "op": "max",
+        "value": 250000,
+        "label_en": "Annual income is at most ₹2,50,000",
+        "label_hi": "वार्षिक आय अधिकतम ₹2,50,000 है"
+      }
+    ]
+  },
+  {
+    "id": "pmjay",
+    "name": {
+      "en": "Ayushman Bharat PM-JAY",
+      "hi": "आयुष्मान भारत प्रधानमंत्री जन आरोग्य योजना"
+    },
+    "benefit": {
+      "en": "Health cover of ₹5 lakh per family per year",
+      "hi": "प्रति परिवार प्रति वर्ष ₹5 लाख का स्वास्थ्य कवर"
+    },
+    "benefitValue": 0,
+    "applyUrl": "https://pmjay.gov.in/",
+    "documents": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Ration card", "hi": "राशन कार्ड" },
+      { "en": "Income certificate", "hi": "आय प्रमाण पत्र" },
+      { "en": "Mobile number", "hi": "मोबाइल नंबर" }
+    ],
+    "rules": [
+      {
+        "field": "income",
+        "op": "max",
+        "value": 300000,
+        "label_en": "Annual income is at most ₹3,00,000",
+        "label_hi": "वार्षिक आय अधिकतम ₹3,00,000 है"
+      }
+    ]
+  },
+  {
+    "id": "pm-svanidhi",
+    "name": {
+      "en": "PM SVANidhi",
+      "hi": "प्रधानमंत्री स्वनिधि"
+    },
+    "benefit": {
+      "en": "Working capital loan of ₹15,000–50,000 for street vendors",
+      "hi": "स्ट्रीट वेंडरों के लिए ₹15,000–50,000 का कार्यशील पूंजी ऋण"
+    },
+    "benefitValue": 0,
+    "applyUrl": "https://pmsvanidhi.mohua.gov.in/",
+    "documents": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Vendor certificate or ID", "hi": "विक्रेता प्रमाण पत्र या पहचान पत्र" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" },
+      { "en": "Mobile number", "hi": "मोबाइल नंबर" }
+    ],
+    "rules": [
+      {
+        "field": "occupation",
+        "op": "in",
+        "value": ["streetvendor"],
+        "label_en": "Occupation is street vendor",
+        "label_hi": "व्यवसाय स्ट्रीट वेंडर है"
+      }
+    ]
+  },
+  {
+    "id": "pmegp",
+    "name": {
+      "en": "PMEGP",
+      "hi": "प्रधानमंत्री रोजगार सृजन कार्यक्रम"
+    },
+    "benefit": {
+      "en": "15–35% subsidy on project cost for a new micro enterprise",
+      "hi": "नई सूक्ष्म इकाई की परियोजना लागत पर 15–35% सब्सिडी"
+    },
+    "benefitValue": 0,
+    "applyUrl": "https://www.kviconline.gov.in/pmegpeportal/pmegphome/index.jsp",
+    "documents": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Project report", "hi": "परियोजना रिपोर्ट" },
+      {
+        "en": "Caste certificate (if applicable)",
+        "hi": "जाति प्रमाण पत्र (यदि लागू हो)"
+      },
+      { "en": "Education proof", "hi": "शिक्षा प्रमाण" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" }
+    ],
+    "rules": [
+      {
+        "field": "age",
+        "op": "min",
+        "value": 18,
+        "label_en": "Age is at least 18",
+        "label_hi": "आयु कम से कम 18 वर्ष है"
+      },
+      {
+        "anyOf": [
+          { "field": "hasBusiness", "op": "eq", "value": true },
+          {
+            "field": "occupation",
+            "op": "in",
+            "value": ["selfemployed", "unemployed"]
+          }
+        ],
+        "label_en": "Has a business, is self-employed, or is unemployed",
+        "label_hi": "व्यवसाय है, स्व-रोज़गार है, या बेरोज़गार है"
+      }
+    ]
+  }
+]
